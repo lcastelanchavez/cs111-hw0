@@ -1,33 +1,39 @@
 # A Kernel Seedling
-TODO: intro
+An introduction to kernel building. This basic module outputs the number of running processes
 
 ## Building
 ```shell
-TODO: cmd for build
+    #Command to build kernel module: 
+    make 
+    #insert/load the kernel module 
+    sudo insmod proc_count.ko
 ```
+  
 
 ## Running
 ```shell
-TODO: cmd for running binary
+    #Command for running binary, should output processes running: 
+    cat /proc/count
 ```
-TODO: results?
+This should output processes running on system
 
 ## Cleaning Up
 ```shell
-TODO: cmd for cleaning the built binary
+    #Command for removing previous build information
+    make clean
+
+    #If error inserting new module after above command + make, run: 
+    sudo rmmod proc_count.ko
 ```
 
 ## Testing
 ```python
 python -m unittest
 ```
-TODO: results?
-
-Report which kernel release version you tested your module on
-(hint: use `uname`, check for options with `man uname`).
-It should match release numbers as seen on https://www.kernel.org/.
+Outputs that it ran 3 tests, either fail or say Ok
 
 ```shell
+#get info about kernel release, name and version
 uname -r -s -v
 ```
-TODO: kernel ver?
+Linux 5.14.8-arch1-1 #1 SMP PREEMPT Sept 2021 (more info printed with above command but omitted)
